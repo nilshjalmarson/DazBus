@@ -1,0 +1,12 @@
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/bin/Debug/net5.0/AzServiceBus.Application.deps.json
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/bin/Debug/net5.0/AzServiceBus.Application.dll
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/bin/Debug/net5.0/ref/AzServiceBus.Application.dll
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/bin/Debug/net5.0/AzServiceBus.Application.pdb
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/obj/Debug/net5.0/AzServiceBus.Application.csprojAssemblyReference.cache
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/obj/Debug/net5.0/AzServiceBus.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/obj/Debug/net5.0/AzServiceBus.Application.AssemblyInfoInputs.cache
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/obj/Debug/net5.0/AzServiceBus.Application.AssemblyInfo.cs
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/obj/Debug/net5.0/AzServiceBus.Application.csproj.CoreCompileInputs.cache
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/obj/Debug/net5.0/AzServiceBus.Application.dll
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/obj/Debug/net5.0/ref/AzServiceBus.Application.dll
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/AzServiceBus.Application/obj/Debug/net5.0/AzServiceBus.Application.pdb
