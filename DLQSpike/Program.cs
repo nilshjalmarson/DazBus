@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Threading.Tasks;
+using Azure.Messaging.ServiceBus;
 using Microsoft.Azure.ServiceBus;
 using Microsoft.Azure.ServiceBus.Core;
 using Newtonsoft.Json;
@@ -25,7 +26,7 @@ namespace DLQSpike
             //
             // if (string.IsNullOrWhiteSpace(subscriptionName)) subscriptionName = "cvservice-user-updated";
 
-            Console.WriteLine("(D)ev (T)est or (P)rod?.");
+            Console.WriteLine("(D)ev (T)est or (P)rod?. (S)ample.");
             var env = Console.Read();
 
             var connectionString = string.Empty;
@@ -43,14 +44,18 @@ namespace DLQSpike
                     connectionString =
                         "Endpoint=sb://trrservicebus.servicebus.windows.net/;SharedAccessKeyName=MessagingAccessKey;SharedAccessKey=pH5EZO+6TlgS+pDpLuHsVjMolniQzOXmJAR3+J7sByA=";
                     break;
+                case 'S':
+                    connectionString =
+                        "Endpoint=sb://nh-sb-sample.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=iYSnMspVj5oQiTxSxFMWO7kvNTRwZL7VDNljM/NDVdI=";
+                    break;
             }
-
 
             Console.WriteLine("1. Peek one message.");
             Console.WriteLine("2. Receive one message.");
             Console.WriteLine("3. Receive all messages.");
             Console.WriteLine("4. Peek and post one message.");
             Console.WriteLine("5. Resend all dead letters.");
+            Console.WriteLine("6. Create dead letter.");
             Console.WriteLine("x. Exit");
 
             var key = new ConsoleKeyInfo();
@@ -75,10 +80,41 @@ namespace DLQSpike
                     case '5':
                         await ResendAllDeadletters(connectionString, topic, subscriptionName, messagesOlderThen);
                         break;
+                    case '6':
+                        await CreateDeadletters(connectionString, topic, subscriptionName);
+                        break;
                     case 'x':
                         return;
                 }
             }
+        }
+
+        private async Task CreateDeadletters(string connectionString, string topic, string subscriptionName)
+        {
+            // since ServiceBusClient implements IAsyncDisposable we create it with "await using"
+            await using var client = new ServiceBusClient(connectionString);
+
+            // create the sender
+            var sender = client.CreateSender(topic);
+
+            // create a message that we can send. UTF-8 encoding is used when providing a string.
+            var message = new ServiceBusMessage("Dead letter test.");
+
+            // send the message
+            await sender.SendMessageAsync(message);
+
+            // create a receiver that we can use to receive the message
+            var receiver = client.CreateReceiver(topic, subscriptionName);
+
+            // the received message is a different type as it contains some service set properties
+            var receivedMessage = await receiver.ReceiveMessageAsync();
+    
+            // get the message body as a string
+            var body = receivedMessage.Body.ToString();
+            Console.WriteLine(body);
+            
+            // dead-letter the message, thereby preventing the message from being received again without receiving from the dead letter queue.
+            await receiver.DeadLetterMessageAsync(receivedMessage);
         }
 
         private async Task ReceiveOneMessageAsync(string connectionString, string topic, string subscriptionName)

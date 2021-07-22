@@ -42,3 +42,8 @@
 /Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DLQSpike/obj/Debug/net5.0/DLQSpike.xml
 /Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DLQSpike/obj/Debug/net5.0/DLQSpike.pdb
 /Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DLQSpike/obj/Debug/net5.0/DLQSpike.genruntimeconfig.cache
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DLQSpike/bin/Debug/net5.0/Azure.Core.dll
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DLQSpike/bin/Debug/net5.0/Azure.Core.Amqp.dll
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DLQSpike/bin/Debug/net5.0/Azure.Messaging.ServiceBus.dll
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DLQSpike/bin/Debug/net5.0/Microsoft.Bcl.AsyncInterfaces.dll
+/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DLQSpike/bin/Debug/net5.0/System.Memory.Data.dll

@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Azure.Messaging.ServiceBus": {
+              "target": "Package",
+              "version": "[7.2.1, )"
+            },
             "Microsoft.Azure.ServiceBus": {
               "target": "Package",
               "version": "[5.1.2, )"

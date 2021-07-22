@@ -1,0 +1,3 @@
+Import-Module ~/Dev/Sampels/DLQSpike/AzDaBus.Powershell/bin/Debug/net5.0/AzDaBus.Powershell.dll
+$result = Get-NhTestValue -ConnectionString 'Endpoint=sb://nh-sb-sample.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=iYSnMspVj5oQiTxSxFMWO7kvNTRwZL7VDNljM/NDVdI=' -TopicName 'basictopic' -SubscriptionName 'Subscription1'
+Write-Output "Dead letter queue message count: $($result.Count)"

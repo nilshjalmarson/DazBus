@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application/DazBus.Application.csproj": {}
+  },
+  "projects": {
+    "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application/DazBus.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application/DazBus.Application.csproj",
+        "projectName": "DazBus.Application",
+        "projectPath": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application/DazBus.Application.csproj",
+        "packagesPath": "/Users/nils.hjalmarssonforefront.se/.nuget/packages/",
+        "outputPath": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/nils.hjalmarssonforefront.se/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Azure.Messaging.ServiceBus": {
+              "target": "Package",
+              "version": "[7.2.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
