@@ -4,7 +4,7 @@ using Azure.Messaging.ServiceBus.Administration;
 
 namespace DazBus.Application
 {
-    public class DeadLetterQueueService
+    public static class DeadLetterQueueService
     {
         public static int GetMessageCount(string connectionString, string topic, string subscriptionName)
         { 
@@ -14,15 +14,5 @@ namespace DazBus.Application
             var subscriptionProperties = subscriptionPropertiesTask.Result;
             return Convert.ToInt32(subscriptionProperties.Value.DeadLetterMessageCount);
         }
-        //
-        // public static Message PeekMessageAsync(string connectionString, string topic, string subscriptionName)
-        // {
-        //     var subPath = EntityNameHelper.FormatSubscriptionPath(topic, subscriptionName);
-        //     var deadLetterPath = EntityNameHelper.FormatDeadLetterPath(subPath);
-        //     var receiver = new MessageReceiver(connectionString, deadLetterPath);
-        //
-        //     var message = receiver.PeekAsync().Result;
-        //     return message;
-        // }
     }
 }

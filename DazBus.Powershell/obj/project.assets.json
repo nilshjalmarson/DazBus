@@ -4774,11 +4774,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Powershell/DazBus.Powershell.csproj",
+      "projectUniqueName": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DazBus.Powershell/DazBus.Powershell.csproj",
       "projectName": "DazBus.Powershell",
-      "projectPath": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Powershell/DazBus.Powershell.csproj",
+      "projectPath": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DazBus.Powershell/DazBus.Powershell.csproj",
       "packagesPath": "/Users/nils.hjalmarssonforefront.se/.nuget/packages/",
-      "outputPath": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Powershell/obj/",
+      "outputPath": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DazBus.Powershell/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/nils.hjalmarssonforefront.se/.nuget/NuGet/NuGet.Config"
@@ -4793,8 +4793,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application/DazBus.Application.csproj": {
-              "projectPath": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application/DazBus.Application.csproj"
+            "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DazBus.Application/DazBus.Application.csproj": {
+              "projectPath": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DazBus.Application/DazBus.Application.csproj"
             }
           }
         }

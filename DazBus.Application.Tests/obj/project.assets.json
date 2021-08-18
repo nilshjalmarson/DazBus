@@ -6170,11 +6170,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application.Tests/DazBus.Application.Tests.csproj",
+      "projectUniqueName": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DazBus.Application.Tests/DazBus.Application.Tests.csproj",
       "projectName": "DazBus.Application.Tests",
-      "projectPath": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application.Tests/DazBus.Application.Tests.csproj",
+      "projectPath": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DazBus.Application.Tests/DazBus.Application.Tests.csproj",
       "packagesPath": "/Users/nils.hjalmarssonforefront.se/.nuget/packages/",
-      "outputPath": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application.Tests/obj/",
+      "outputPath": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DazBus.Application.Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/nils.hjalmarssonforefront.se/.nuget/NuGet/NuGet.Config"
@@ -6189,8 +6189,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application/DazBus.Application.csproj": {
-              "projectPath": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application/DazBus.Application.csproj"
+            "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DazBus.Application/DazBus.Application.csproj": {
+              "projectPath": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DazBus.Application/DazBus.Application.csproj"
             }
           }
         }

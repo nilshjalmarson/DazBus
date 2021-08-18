@@ -1,11 +1,11 @@
 ﻿using System.Management.Automation;
 using DazBus.Application;
 
-namespace Nh.AzServiceBus
+namespace DazBus.Powershell
 {
-    [Cmdlet(VerbsCommon.Get, "NhDlqCount")]
-    [OutputType(typeof(DlqInfo))]
-    public class GetNhDlqCount : Cmdlet
+    [Cmdlet(VerbsCommon.Get, "DazBusDlqCount")]
+    [OutputType(typeof(int))]
+    public class GetDazBusDlqCount : Cmdlet
     {
         [Parameter(Mandatory = true)] 
         public string ConnectionString { get; set; }
@@ -20,7 +20,7 @@ namespace Nh.AzServiceBus
         {
             base.ProcessRecord();
             var messageCount = DeadLetterQueueService.GetMessageCount(ConnectionString, TopicName, SubscriptionName);
-            WriteObject(new DlqInfo {Count = messageCount});
+            WriteObject(messageCount);
         }
     }
 }

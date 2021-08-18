@@ -6758,11 +6758,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DLQSpike/DLQSpike.csproj",
+      "projectUniqueName": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DLQSpike/DLQSpike.csproj",
       "projectName": "DLQSpike",
-      "projectPath": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DLQSpike/DLQSpike.csproj",
+      "projectPath": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DLQSpike/DLQSpike.csproj",
       "packagesPath": "/Users/nils.hjalmarssonforefront.se/.nuget/packages/",
-      "outputPath": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DLQSpike/obj/",
+      "outputPath": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DLQSpike/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/nils.hjalmarssonforefront.se/.nuget/NuGet/NuGet.Config"

@@ -1,16 +1,15 @@
 using System.Linq;
-using Nh.AzServiceBus;
 using Xunit;
 
-namespace Nh.AzureServiceBus.Tests
+namespace DazBus.Powershell.Tests
 {
-    public class UnitTest1
+    public class GetDazBusDlqCountTests
     {
         [Fact]
-        public void Test1()
+        public void TestAgainstDemoServiceBus()
         {
             // Arrange.
-            var cmdlet = new GetNhDlqCount
+            var cmdlet = new GetDazBusDlqCount
             {
                 ConnectionString = "Endpoint=sb://nh-sb-sample.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=iYSnMspVj5oQiTxSxFMWO7kvNTRwZL7VDNljM/NDVdI=",
                 TopicName = "basictopic",
@@ -18,10 +17,10 @@ namespace Nh.AzureServiceBus.Tests
             };
 
             // Act.
-            var results = cmdlet.Invoke().OfType<DlqInfo>().ToList();
+            var results = cmdlet.Invoke().OfType<int>().ToList().First();
 
             // Assert.
-            Assert.True(results.Count == 1);
+            Assert.True(results == 1);
         }
     }
 }

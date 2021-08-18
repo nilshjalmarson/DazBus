@@ -1,7 +1,6 @@
-using DazBus.Application;
 using NUnit.Framework;
 
-namespace AzDaBus.Application.Tests
+namespace DazBus.Application.Tests
 {
     [TestFixture]
     public class DeadLetterQueueTests

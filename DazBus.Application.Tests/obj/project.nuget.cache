@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ScDOkNDXDbhlPWZg5fVU4OLcB+PrR7lbU8on7YiCuz1fKPhKC0Q+bdU4iIRx9CVOtEjvkTzmJxnM89RM9QKQ3A==",
+  "dgSpecHash": "BkI9EKmUDmCQpUMhjzFmWX88uem8QbPOYWp3xLMwO9o3vnRlEqhj/2S4mZgOM+7rv5RFwrhnIGRYw7/WxHa34w==",
   "success": true,
-  "projectFilePath": "/Users/nils.hjalmarssonforefront.se/Dev/Sampels/DLQSpike/DazBus.Application.Tests/DazBus.Application.Tests.csproj",
+  "projectFilePath": "/Users/nils.hjalmarssonforefront.se/Dev/Me/DazBus/DazBus.Application.Tests/DazBus.Application.Tests.csproj",
   "expectedPackageFiles": [
     "/Users/nils.hjalmarssonforefront.se/.nuget/packages/azure.core/1.16.0/azure.core.1.16.0.nupkg.sha512",
     "/Users/nils.hjalmarssonforefront.se/.nuget/packages/azure.core.amqp/1.2.0/azure.core.amqp.1.2.0.nupkg.sha512",
