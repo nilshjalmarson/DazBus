@@ -1,19 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
 
         <IsPackable>false</IsPackable>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="6.8.0" />
         <PackageReference Include="NUnit" Version="3.12.0" />
         <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\DazBus.Application\DazBus.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Azure.Identity, Version=1.4.1.0, Culture=neutral, PublicKeyToken=92742159e12e44c8">
+        <HintPath>..\..\..\..\.nuget\packages\azure.identity\1.4.1\lib\netstandard2.0\Azure.Identity.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

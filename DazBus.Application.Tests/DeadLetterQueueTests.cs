@@ -1,32 +1,32 @@
+using System.Threading.Tasks;
+using FluentAssertions;
 using NUnit.Framework;
 
-namespace DazBus.Application.Tests
+namespace DazBus.Application.Tests;
+
+[TestFixture]
+public class DeadLetterQueueTests
 {
-    [TestFixture]
-    public class DeadLetterQueueTests
+    [SetUp]
+    public void Setup()
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
+    }
 
-        [Test]
-        public void PeekMessageTest()
-        {
-            var connectionString = "Endpoint=sb://devtrrservicebus.servicebus.windows.net/;SharedAccessKeyName=CoreAccessKey;SharedAccessKey=tLdhrENVkPapXmFcUoK18aLQmIVcNdypNiESW/nSwxw=";
-            var topicName = "user-profile";
-            var subscriptionName = "outgoing_user-updated_client-match-domain";
-            //var messageCount = DeadLetterQueueService.PeekMessageAsync(connectionString, topicName, subscriptionName);
-        }
+    [Test]
+    public async Task PeekMessageTest()
+    {
+        const string servicebusnamespace = "riksbyggenGraphServiceBusDev.servicebus.windows.net";
+        const string queueName = "graph-tokenservice-contact";
+        var message = await DeadLetterQueueService.PeekQueueMessageAsync(servicebusnamespace, queueName);
+        Assert.IsNotNull(message);
+    }
 
-        [Test]
-        public void GetCountTest()
-        {
-            var connectionString = "Endpoint=sb://nh-sb-sample.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=iYSnMspVj5oQiTxSxFMWO7kvNTRwZL7VDNljM/NDVdI=";
-            var topicName = "basictopic";
-            var subscriptionName = "Subscription1";
-            var messageCount = DeadLetterQueueService.GetMessageCount(connectionString, topicName, subscriptionName);
-            Assert.AreEqual(1,messageCount);
-        }
+    [Test]
+    public async Task GetCountTest()
+    {
+        const string servicebusnamespace = "riksbyggenGraphServiceBusDev.servicebus.windows.net";
+        const string queueName = "graph-tokenservice-contact";
+        var messageCount = await DeadLetterQueueService.GetQueueMessageCount(servicebusnamespace, queueName);
+        messageCount.Should().BeGreaterThan(1);
     }
 }

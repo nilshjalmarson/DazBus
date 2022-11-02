@@ -1,26 +1,32 @@
 ﻿using System.Management.Automation;
 using DazBus.Application;
 
-namespace DazBus.Powershell
+namespace DazBus.Powershell;
+
+[Cmdlet(VerbsCommon.Get, "DazBusDlqCount")]
+[OutputType(typeof(int))]
+public class GetDazBusDlqCount : Cmdlet
 {
-    [Cmdlet(VerbsCommon.Get, "DazBusDlqCount")]
-    [OutputType(typeof(int))]
-    public class GetDazBusDlqCount : Cmdlet
+    [Parameter(Mandatory = false)] 
+    public string ConnectionString { get; set; }
+
+    [Parameter(Mandatory = true)] 
+    public string SubscriptionName { get; set; }
+
+    [Parameter(Mandatory = true)] 
+    public string TopicName { get; set; }
+        
+    [Parameter] 
+    public string Namespace { get; set; }
+
+    protected override void ProcessRecord()
     {
-        [Parameter(Mandatory = true)] 
-        public string ConnectionString { get; set; }
+        base.ProcessRecord();
 
-        [Parameter(Mandatory = true)] 
-        public string SubscriptionName { get; set; }
+        //var credential = new AzurePowerShellCredential();
 
-        [Parameter(Mandatory = true)] 
-        public string TopicName { get; set; }
-
-        protected override void ProcessRecord()
-        {
-            base.ProcessRecord();
-            var messageCount = DeadLetterQueueService.GetMessageCount(ConnectionString, TopicName, SubscriptionName);
-            WriteObject(messageCount);
-        }
+        var messageCount = DeadLetterQueueService.GetQueueMessageCount(ConnectionString, TopicName);
+        //var messageCount = DeadLetterQueueService.GetMessageCount(credential, Namespace, TopicName, SubscriptionName);
+        WriteObject(messageCount);
     }
 }

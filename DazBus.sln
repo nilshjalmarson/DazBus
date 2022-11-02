@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DazBus.Application.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DazBus.Powershell.Tests", "DazBus.Powershell.Tests\DazBus.Powershell.Tests.csproj", "{50958F3D-2634-439D-BFE9-6A1F75550BBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DazBus.CLI", "DazBus.CLI\DazBus.CLI.csproj", "{F5D82D0A-369B-4500-B736-24DA816D01FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{50958F3D-2634-439D-BFE9-6A1F75550BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50958F3D-2634-439D-BFE9-6A1F75550BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50958F3D-2634-439D-BFE9-6A1F75550BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5D82D0A-369B-4500-B736-24DA816D01FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5D82D0A-369B-4500-B736-24DA816D01FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5D82D0A-369B-4500-B736-24DA816D01FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5D82D0A-369B-4500-B736-24DA816D01FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
