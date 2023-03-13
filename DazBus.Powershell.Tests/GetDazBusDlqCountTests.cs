@@ -11,10 +11,8 @@ public class GetDazBusDlqCountTests
         // Arrange.
         var cmdlet = new GetDazBusDlqCount
         {
-            ConnectionString = "Endpoint=sb://riksbyggengraphservicebusat.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=r9WdxThNTGWz3VzCSdA5OIGgOLb0kH3MbNrzc5X5hco=",
-            TopicName = "boardeaser-callback-received",
-            SubscriptionName = "callbacks",
-            Namespace = "riksbyggengraphservicebusat.servicebus.windows.net"
+            Namespace = "riksbyggengraphservicebusdev.servicebus.windows.net",
+            QueueName = "graph-customer-contact"
         };
 
         // Act.

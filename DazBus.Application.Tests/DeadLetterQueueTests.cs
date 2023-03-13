@@ -17,7 +17,7 @@ public class DeadLetterQueueTests
     {
         const string servicebusnamespace = "riksbyggenGraphServiceBusDev.servicebus.windows.net";
         const string queueName = "graph-tokenservice-contact";
-        var message = await DeadLetterQueueService.PeekQueueMessageAsync(servicebusnamespace, queueName);
+        var message = await QueueService.PeekQueueMessageAsync(servicebusnamespace, queueName);
         Assert.IsNotNull(message);
     }
 
@@ -26,7 +26,15 @@ public class DeadLetterQueueTests
     {
         const string servicebusnamespace = "riksbyggenGraphServiceBusDev.servicebus.windows.net";
         const string queueName = "graph-tokenservice-contact";
-        var messageCount = await DeadLetterQueueService.GetQueueMessageCount(servicebusnamespace, queueName);
+        var messageCount = await QueueService.GetQueueMessageCount(servicebusnamespace, queueName);
         messageCount.Should().BeGreaterThan(1);
+    }
+
+    [Test]
+    public async Task ClearQueueTest()
+    {
+        const string servicebusnamespace = "riksbyggenGraphServiceBusSt.servicebus.windows.net";
+        const string queueName = "graph-sparproxy-contact";
+        await QueueService.ReceiveAllQueueMessagesAsync(servicebusnamespace, queueName);
     }
 }
