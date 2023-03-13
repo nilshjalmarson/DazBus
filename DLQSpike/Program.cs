@@ -108,11 +108,11 @@ namespace DLQSpike
 
             // the received message is a different type as it contains some service set properties
             var receivedMessage = await receiver.ReceiveMessageAsync();
-    
+
             // get the message body as a string
             var body = receivedMessage.Body.ToString();
             Console.WriteLine(body);
-            
+
             // dead-letter the message, thereby preventing the message from being received again without receiving from the dead letter queue.
             await receiver.DeadLetterMessageAsync(receivedMessage);
         }
@@ -197,7 +197,7 @@ namespace DLQSpike
                     }
                 },
                 new MessageHandlerOptions(e => LogMessageHandlerException(e))
-                    {AutoComplete = false, MaxConcurrentCalls = 1});
+                { AutoComplete = false, MaxConcurrentCalls = 1 });
 
             return doneReceiving.Task;
         }
@@ -243,7 +243,7 @@ namespace DLQSpike
                     }
                 },
                 new MessageHandlerOptions(e => LogMessageHandlerException(e))
-                    {AutoComplete = false, MaxConcurrentCalls = 1});
+                { AutoComplete = false, MaxConcurrentCalls = 1 });
 
             return doneReceiving.Task;
         }

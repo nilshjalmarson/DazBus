@@ -7,9 +7,9 @@ namespace DazBus.Powershell;
 [OutputType(typeof(int))]
 public class DeleteAllDeadLettersForAllQueues : Cmdlet
 {
-    [Parameter(Mandatory = true)]  
+    [Parameter(Mandatory = true)]
     public string Namespace { get; set; }
-    
+
     protected override void ProcessRecord()
     {
         base.ProcessRecord();

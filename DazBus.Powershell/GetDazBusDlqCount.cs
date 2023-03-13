@@ -7,10 +7,10 @@ namespace DazBus.Powershell;
 [OutputType(typeof(int))]
 public class GetDazBusDlqCount : Cmdlet
 {
-    [Parameter(Mandatory = true)]  
+    [Parameter(Mandatory = true)]
     public string Namespace { get; set; }
-    
-    [Parameter(Mandatory = true)] 
+
+    [Parameter(Mandatory = true)]
     public string QueueName { get; set; }
 
     protected override void ProcessRecord()

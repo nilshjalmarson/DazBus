@@ -75,7 +75,7 @@ public static class QueueService
             while (counter < messageCount && await receivedMessages.MoveNextAsync())
             {
                 counter++;
-                
+
                 Console.SetCursorPosition(pos.Left, pos.Top);
                 Console.Write(counter);
             }
@@ -109,7 +109,7 @@ public static class QueueService
         // }
         // Console.WriteLine($"Got {counter} for {queueName}");
     }
-    
+
     public static async Task DeleteAllDeadLettersForAllQueuesAsync(string nameSpace)
     {
         var taskList = new List<Task>();

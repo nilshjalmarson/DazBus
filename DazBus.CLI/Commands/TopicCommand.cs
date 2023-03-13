@@ -16,7 +16,7 @@ public static class TopicCommand
         var sbTopicNameOption = new Option<string>(
             name: "--topic",
             description: "Topic name");
-        
+
         var sbSubscriptionNameOption = new Option<string>(
             name: "--subscription",
             description: "Subscription name");
