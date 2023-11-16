@@ -146,12 +146,35 @@ public static class QueueService
         var credential = new DefaultAzureCredential();
         var client = new ServiceBusAdministrationClient(nameSpace, credential);
         var queues = client.GetQueuesAsync();
-        var enumerator = queues.GetAsyncEnumerator();
-        while (await enumerator.MoveNextAsync())
+        await using (var enumerator = queues.GetAsyncEnumerator())
         {
-            var subscriptionPropertiesTask = await client.GetQueueRuntimePropertiesAsync(enumerator.Current.Name);
-            var count = Convert.ToInt32(subscriptionPropertiesTask.Value.DeadLetterMessageCount);
-            yield return new Tuple<string, int>(enumerator.Current.Name, count);
+            while (await enumerator.MoveNextAsync())
+            {
+                var subscriptionPropertiesTask = await client.GetQueueRuntimePropertiesAsync(enumerator.Current.Name);
+                var count = Convert.ToInt32(subscriptionPropertiesTask.Value.DeadLetterMessageCount);
+                yield return new Tuple<string, int>(enumerator.Current.Name, count);
+            }
+        }
+    }
+
+    public static async Task ReSendAllQueueMessagesAsync(string nameSpace, string queueName)
+    {
+        var credential = new DefaultAzureCredential();
+        await using var client = new ServiceBusClient(nameSpace, credential);
+        
+        await using var receiver = client.CreateReceiver(queueName, new ServiceBusReceiverOptions
+        {
+            SubQueue = SubQueue.DeadLetter,
+            ReceiveMode = ServiceBusReceiveMode.ReceiveAndDelete
+        });
+
+        var message = await receiver.ReceiveMessageAsync();
+        if (message != null)
+        {
+            await using var sender = client.CreateSender(queueName);
+            var reSentMessage = new ServiceBusMessage(message);
+            await sender.SendMessageAsync(reSentMessage);
+            Console.WriteLine($"Re-sent message {message.MessageId} from {queueName}");
         }
     }
 }

@@ -76,7 +76,7 @@ public static class TopicService
         {
             var counter = 0;
             var pos = Console.GetCursorPosition();
-            var receivedMessages = receiver.ReceiveMessagesAsync().GetAsyncEnumerator();
+            await using var receivedMessages = receiver.ReceiveMessagesAsync().GetAsyncEnumerator();
             while (counter < messageCount && await receivedMessages.MoveNextAsync())
             {
                 counter++;

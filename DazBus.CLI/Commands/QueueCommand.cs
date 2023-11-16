@@ -33,9 +33,19 @@ public static class QueueCommand
 
         clearQueueCommand.SetHandler(async (sbNameSpace, queueName) => { await QueueService.ReceiveAllQueueMessagesAsync(sbNameSpace, queueName); }, sbNameSpaceOption,
             sbQueueNameOption);
+        
+        var resendQueueCommand = new Command("re-send", "RE-send all messages in the queue to the original queue")
+        {
+            sbNameSpaceOption,
+            sbQueueNameOption
+        };
+        
+        resendQueueCommand.SetHandler(async (sbNameSpace, queueName) => { await QueueService.ReSendAllQueueMessagesAsync(sbNameSpace, queueName); }, sbNameSpaceOption,
+            sbQueueNameOption);
 
         command.AddCommand(listQueuesCommand);
         command.AddCommand(clearQueueCommand);
+        command.AddCommand(resendQueueCommand);
         return command;
     }
 }

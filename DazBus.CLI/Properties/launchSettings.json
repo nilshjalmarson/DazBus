@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "DazBus.CLI": {
+      "commandName": "Project",
+      "environmentVariables": {
+        
+      },
+      "commandLineArgs": "queue re-send --name _exogo-update-property-on-new-account --namespace riksbyggen-property-management-dev.servicebus.windows.net"
+    }
+  }
+}
